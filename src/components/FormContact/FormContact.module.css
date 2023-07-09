@@ -1,0 +1,33 @@
+.wrapper {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+}
+
+.formlabel {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.forminput {
+    border-radius: 5px;
+    padding: 7px;
+    margin: 5px;
+}
+
+.formbtn {
+    width: 150px;
+    padding: 7px;
+    margin: 0 auto;
+    
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.formbtn:hover {
+    background-color: azure;
+}

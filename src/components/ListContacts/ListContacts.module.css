@@ -1,0 +1,23 @@
+.ulwrap {
+    padding-left: 0px ;
+}
+
+.list {
+  display: flex;
+  width: 330px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+    width: 80px;
+    height: 30px;
+    padding: 7px;
+    
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: azure;
+}
