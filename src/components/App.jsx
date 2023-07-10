@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FormContact } from './FormContact/FormContact';
 import { Filter } from './Filter/Filter';
 import { ListContacts } from './ListContacts/ListContacts';
@@ -8,6 +8,7 @@ import css from './App.module.css';
 const App = () => {
   const [contacts, setContacts] = useState([]);
   const [filters, setFilters] = useState('');
+  const prevContactsLengthRef = useRef(contacts.length);
 
   const onAddContact = ({ name, number }) => {
     const checkedContact = contacts.find(el => el.name === name);
@@ -47,8 +48,11 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const stringifiedContact = JSON.stringify(contacts);
-    localStorage.setItem('contact', stringifiedContact);
+    if (prevContactsLengthRef.current !== contacts.length) {
+      const stringifiedContact = JSON.stringify(contacts);
+      localStorage.setItem('contact', stringifiedContact);
+    }
+    prevContactsLengthRef.current = contacts.length;
   }, [contacts]);
 
   return (
